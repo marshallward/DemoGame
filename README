@@ -1,0 +1,14 @@
+# JRPG README
+---
+name:
+    JRPG
+
+description:
+    C# JRPG Engine
+
+contact:
+    author: Marshall Ward
+    email: marshall.ward@gmail.com
+
+notes: >
+    Early attempts to get a JRPG-style game working on XNA / MonoGame.
