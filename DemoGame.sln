@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JRPG", "JRPG.csproj", "{871D1DEA-88F4-46C7-BD08-A4C40FAC8363}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoGame", "DemoGame.csproj", "{871D1DEA-88F4-46C7-BD08-A4C40FAC8363}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TiledSharp", "..\TiledSharp\TiledSharp.csproj", "{E4130F8D-D301-4E0C-916D-489C4A23C9B1}"
 EndProject
@@ -21,6 +21,6 @@ Global
 		{E4130F8D-D301-4E0C-916D-489C4A23C9B1}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = JRPG.csproj
+		StartupItem = DemoGame.csproj
 	EndGlobalSection
 EndGlobal

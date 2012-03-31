@@ -9,9 +9,9 @@ namespace JRPG
         /// </summary>
         static void Main(string[] args)
         {
-            using (Jrpg jrpg = new Jrpg())
+            using (DemoGame demo = new DemoGame())
             {
-                jrpg.Run();
+                demo.Run();
             }
         }
     }

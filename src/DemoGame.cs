@@ -19,12 +19,12 @@ namespace JRPG
     /// <summary>
     /// This is the main type for your game
     /// </summary>
-    public class Jrpg : Microsoft.Xna.Framework.Game
+    public class DemoGame : Microsoft.Xna.Framework.Game
     {
         public GraphicsDeviceManager graphics;
         public SpriteBatch spriteBatch;
-
-        public Jrpg()
+		
+        public DemoGame()
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
@@ -39,10 +39,10 @@ namespace JRPG
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
-
+			
             base.Initialize();
         }
-
+		
         /// <summary>
         /// LoadContent will be called once per game and is the place to load
         /// all of your content.
@@ -51,14 +51,14 @@ namespace JRPG
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
-
+			
             // TODO: use this.Content to load your game content here
 			
 			Stream map_stream = this.GetType().Assembly.GetManifestResourceStream("DemoGame.assets.demo_map.tmx");
 			XDocument doc = XDocument.Load(map_stream);
 			Console.WriteLine((string)doc.Element("map").Attribute("version"));
         }
-
+		
         /// <summary>
         /// UnloadContent will be called once per game and is the place to unload
         /// all content.
@@ -67,7 +67,7 @@ namespace JRPG
         {
             // TODO: Unload any non ContentManager content here
         }
-
+		
         /// <summary>
         /// Allows the game to run logic such as updating the world,
         /// checking for collisions, gathering input, and playing audio.
@@ -82,7 +82,7 @@ namespace JRPG
             // TODO: Add your update logic here
             base.Update(gameTime);
         }
-
+		
         /// <summary>
         /// This is called when the game should draw itself.
         /// </summary>
@@ -90,9 +90,9 @@ namespace JRPG
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
-
+			
             // TODO: Add your drawing code here
-
+			
             base.Draw(gameTime);
         }
     }

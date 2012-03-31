@@ -33,8 +33,8 @@
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
-    <Compile Include="src\Jrpg.cs" />
     <Compile Include="src\Program.cs" />
+    <Compile Include="src\DemoGame.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="MonoGame.Framework.Linux, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null">
