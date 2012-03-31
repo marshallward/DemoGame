@@ -1,10 +1,10 @@
-# JRPG README
+# DemoGame README
 ---
 name:
-    JRPG
+    DemoGame
 
 description:
-    C# JRPG Engine
+    C# Demo Game 
 
 contact:
     author: Marshall Ward
