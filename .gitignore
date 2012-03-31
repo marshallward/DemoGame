@@ -1,0 +1,5 @@
+# Monodevelop configuration
+*.userprefs
+*.pidb
+bin/
+assets/

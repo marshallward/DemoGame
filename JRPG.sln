@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JRPG", "JRPG.csproj", "{871D1DEA-88F4-46C7-BD08-A4C40FAC8363}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TiledSharp", "..\TiledSharp\TiledSharp.csproj", "{E4130F8D-D301-4E0C-916D-489C4A23C9B1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -13,6 +15,10 @@ Global
 		{871D1DEA-88F4-46C7-BD08-A4C40FAC8363}.Debug|x86.Build.0 = Debug|x86
 		{871D1DEA-88F4-46C7-BD08-A4C40FAC8363}.Release|x86.ActiveCfg = Release|x86
 		{871D1DEA-88F4-46C7-BD08-A4C40FAC8363}.Release|x86.Build.0 = Release|x86
+		{E4130F8D-D301-4E0C-916D-489C4A23C9B1}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{E4130F8D-D301-4E0C-916D-489C4A23C9B1}.Debug|x86.Build.0 = Debug|Any CPU
+		{E4130F8D-D301-4E0C-916D-489C4A23C9B1}.Release|x86.ActiveCfg = Release|Any CPU
+		{E4130F8D-D301-4E0C-916D-489C4A23C9B1}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = JRPG.csproj

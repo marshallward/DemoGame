@@ -9,6 +9,11 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
 
+using TiledSharp;
+using System.IO;
+using System.Reflection;
+using System.Xml.Linq;
+
 namespace JRPG
 {
     /// <summary>
@@ -24,7 +29,7 @@ namespace JRPG
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
         }
-
+		
         /// <summary>
         /// Allows the game to perform any initialization it needs to before starting to run.
         /// This is where it can query for any required services and load any non-graphic
@@ -48,6 +53,10 @@ namespace JRPG
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
             // TODO: use this.Content to load your game content here
+			
+			Stream map_stream = this.GetType().Assembly.GetManifestResourceStream("DemoGame.assets.demo_map.tmx");
+			XDocument doc = XDocument.Load(map_stream);
+			Console.WriteLine((string)doc.Element("map").Attribute("version"));
         }
 
         /// <summary>
@@ -69,7 +78,7 @@ namespace JRPG
             // Allows the game to exit
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
                 this.Exit();
-
+			
             // TODO: Add your update logic here
             base.Update(gameTime);
         }
