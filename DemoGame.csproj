@@ -63,5 +63,7 @@
     <EmbeddedResource Include="assets\demo_tiles3.tsx" />
     <EmbeddedResource Include="assets\simple_tiles.png" />
     <EmbeddedResource Include="assets\test.tmx" />
+    <EmbeddedResource Include="assets\simple.tmx" />
+    <EmbeddedResource Include="assets\simple.tsx" />
   </ItemGroup>
 </Project>

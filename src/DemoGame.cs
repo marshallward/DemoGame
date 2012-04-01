@@ -52,8 +52,6 @@ namespace JRPG
             // TODO: use this.Content to load your game content here
             var demo_map = new Map("test.tmx");
             Console.WriteLine(demo_map.version);
-            Console.WriteLine(demo_map.orientation);
-            Console.WriteLine(demo_map.width);
         }
         
         /// <summary>
