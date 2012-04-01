@@ -10,9 +10,6 @@ using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
 
 using TiledSharp;
-using System.IO;
-using System.Reflection;
-using System.Xml.Linq;
 
 namespace JRPG
 {
@@ -23,13 +20,13 @@ namespace JRPG
     {
         public GraphicsDeviceManager graphics;
         public SpriteBatch spriteBatch;
-		
+        
         public DemoGame()
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
         }
-		
+        
         /// <summary>
         /// Allows the game to perform any initialization it needs to before starting to run.
         /// This is where it can query for any required services and load any non-graphic
@@ -39,10 +36,10 @@ namespace JRPG
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
-			
+            
             base.Initialize();
         }
-		
+        
         /// <summary>
         /// LoadContent will be called once per game and is the place to load
         /// all of your content.
@@ -51,14 +48,14 @@ namespace JRPG
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
-			
+            
             // TODO: use this.Content to load your game content here
-			
-			Stream map_stream = this.GetType().Assembly.GetManifestResourceStream("DemoGame.assets.demo_map.tmx");
-			XDocument doc = XDocument.Load(map_stream);
-			Console.WriteLine((string)doc.Element("map").Attribute("version"));
+            var demo_map = new Map("test.tmx");
+            Console.WriteLine(demo_map.version);
+            Console.WriteLine(demo_map.orientation);
+            Console.WriteLine(demo_map.width);
         }
-		
+        
         /// <summary>
         /// UnloadContent will be called once per game and is the place to unload
         /// all content.
@@ -67,7 +64,7 @@ namespace JRPG
         {
             // TODO: Unload any non ContentManager content here
         }
-		
+        
         /// <summary>
         /// Allows the game to run logic such as updating the world,
         /// checking for collisions, gathering input, and playing audio.
@@ -78,11 +75,11 @@ namespace JRPG
             // Allows the game to exit
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
                 this.Exit();
-			
+            
             // TODO: Add your update logic here
             base.Update(gameTime);
         }
-		
+        
         /// <summary>
         /// This is called when the game should draw itself.
         /// </summary>
@@ -90,9 +87,9 @@ namespace JRPG
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
-			
+            
             // TODO: Add your drawing code here
-			
+            
             base.Draw(gameTime);
         }
     }

@@ -35,6 +35,7 @@
   <ItemGroup>
     <Compile Include="src\Program.cs" />
     <Compile Include="src\DemoGame.cs" />
+    <Compile Include="src\JRPG.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="MonoGame.Framework.Linux, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null">
@@ -53,13 +54,14 @@
     <Folder Include="assets\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="assets\demo_tiles.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="assets\demo_map.tmx">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
+    <EmbeddedResource Include="assets\demo_map.tmx" />
+    <EmbeddedResource Include="assets\demo_tiles.png" />
+    <EmbeddedResource Include="assets\demo_tiles.tsx" />
+    <EmbeddedResource Include="assets\demo_tiles2.png" />
+    <EmbeddedResource Include="assets\demo_tiles2.tsx" />
+    <EmbeddedResource Include="assets\demo_tiles3.png" />
+    <EmbeddedResource Include="assets\demo_tiles3.tsx" />
+    <EmbeddedResource Include="assets\simple_tiles.png" />
+    <EmbeddedResource Include="assets\test.tmx" />
   </ItemGroup>
 </Project>
