@@ -10,6 +10,7 @@ using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
 
 using TiledSharp;
+using Mosaix;
 
 namespace JRPG
 {
@@ -24,7 +25,7 @@ namespace JRPG
         public DemoGame()
         {
             graphics = new GraphicsDeviceManager(this);
-            Content.RootDirectory = "Content";
+            Content.RootDirectory = "assets";
         }
         
         /// <summary>
@@ -48,10 +49,9 @@ namespace JRPG
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
-            
             // TODO: use this.Content to load your game content here
-            var demo_map = new Map("test.tmx");
-            Console.WriteLine(demo_map.version);
+            var demo_map = new Map("tinytown.tmx");
+            var canvas = new Canvas(demo_map, this.Content);
         }
         
         /// <summary>
