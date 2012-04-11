@@ -21,6 +21,10 @@ namespace JRPG
     {
         public GraphicsDeviceManager graphics;
         public SpriteBatch spriteBatch;
+        Canvas canvas;
+        
+        // Testing
+        Texture2D towntiles;
         
         public DemoGame()
         {
@@ -36,8 +40,7 @@ namespace JRPG
         /// </summary>
         protected override void Initialize()
         {
-            // TODO: Add your initialization logic here
-            
+            // TODO: Add your initialization logic here            
             base.Initialize();
         }
         
@@ -51,7 +54,7 @@ namespace JRPG
             spriteBatch = new SpriteBatch(GraphicsDevice);
             // TODO: use this.Content to load your game content here
             var demo_map = new Map("tinytown.tmx");
-            var canvas = new Canvas(demo_map, this.Content);
+            canvas = new Canvas(demo_map, this.Content);
         }
         
         /// <summary>
@@ -87,6 +90,10 @@ namespace JRPG
             GraphicsDevice.Clear(Color.CornflowerBlue);
             
             // TODO: Add your drawing code here
+            spriteBatch.Begin(SpriteSortMode.Immediate, BlendState.AlphaBlend,
+                              SamplerState.PointClamp, null, null);
+            canvas.Draw(spriteBatch);
+            spriteBatch.End();
             
             base.Draw(gameTime);
         }
