@@ -1,6 +1,6 @@
 using System;
 
-namespace JRPG
+namespace DemoGame
 {
     static class Program
     {

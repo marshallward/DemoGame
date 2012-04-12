@@ -12,7 +12,7 @@ using Microsoft.Xna.Framework.Media;
 using TiledSharp;
 using Mosaix;
 
-namespace JRPG
+namespace DemoGame
 {
     /// <summary>
     /// This is the main type for your game
@@ -21,10 +21,7 @@ namespace JRPG
     {
         public GraphicsDeviceManager graphics;
         public SpriteBatch spriteBatch;
-        Canvas canvas;
-        
-        // Testing
-        Texture2D towntiles;
+        public Canvas canvas;
         
         public DemoGame()
         {
