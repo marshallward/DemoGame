@@ -10,7 +10,10 @@ using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
 
 using TiledSharp;
-using Mosaix;
+using Tesserae;
+
+using System.IO;
+using System.Reflection;
 
 namespace DemoGame
 {
@@ -21,7 +24,11 @@ namespace DemoGame
     {
         public GraphicsDeviceManager graphics;
         public SpriteBatch spriteBatch;
+        public Mosaic mosaic;
+        
+        // Testing
         public Canvas canvas;
+        public Texture2D testImg;
         
         public DemoGame()
         {
@@ -51,7 +58,12 @@ namespace DemoGame
             spriteBatch = new SpriteBatch(GraphicsDevice);
             // TODO: use this.Content to load your game content here
             var demo_map = new Map("tinytown.tmx");
-            canvas = new Canvas(demo_map, this.Content);
+            mosaic = new Mosaic(demo_map, this.Content);
+            canvas = new Canvas(this);
+            
+            Assembly asm = Assembly.GetEntryAssembly();
+            Stream imgStream = asm.GetManifestResourceStream("DemoGame.assets.towntiles.png");
+            testImg = Texture2D.FromFile(GraphicsDevice, imgStream);
         }
         
         /// <summary>
@@ -89,7 +101,7 @@ namespace DemoGame
             // TODO: Add your drawing code here
             spriteBatch.Begin(SpriteSortMode.Immediate, BlendState.AlphaBlend,
                               SamplerState.PointClamp, null, null);
-            canvas.Draw(spriteBatch);
+            mosaic.Draw(spriteBatch);
             spriteBatch.End();
             
             base.Draw(gameTime);

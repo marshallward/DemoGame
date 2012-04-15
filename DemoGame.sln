@@ -5,7 +5,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoGame", "DemoGame.csproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TiledSharp", "..\TiledSharp\TiledSharp.csproj", "{E4130F8D-D301-4E0C-916D-489C4A23C9B1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mosaix", "..\Mosaix\Mosaix.csproj", "{30777E62-15EC-4362-ADBB-8A8DE93FF10D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tesserae", "..\Tesserae\Tesserae.csproj", "{30777E62-15EC-4362-ADBB-8A8DE93FF10D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
