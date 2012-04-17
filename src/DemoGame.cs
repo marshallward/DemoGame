@@ -57,8 +57,7 @@ namespace DemoGame
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
             // TODO: use this.Content to load your game content here
-            var demo_map = new Map("tinytown.tmx");
-            mosaic = new Mosaic(demo_map, this.Content);
+            mosaic = new Mosaic(this, "tinytown.tmx");
             canvas = new Canvas(this);
             
             Assembly asm = Assembly.GetEntryAssembly();
