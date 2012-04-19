@@ -26,13 +26,15 @@ namespace DemoGame
         public SpriteBatch spriteBatch;
         public Mosaic mosaic;
         
-        // Testing
-        public Canvas canvas;
-        public Texture2D testImg;
+        // Better place to put this?
+        public int defaultWidth = 1280;
+        public int defaultHeight = 720;
         
         public DemoGame()
         {
             graphics = new GraphicsDeviceManager(this);
+            
+            // I don't want to use this, delete it?
             Content.RootDirectory = "assets";
         }
         
@@ -46,6 +48,14 @@ namespace DemoGame
         {
             // TODO: Add your initialization logic here            
             base.Initialize();
+            
+            // Default window resolution
+            graphics.IsFullScreen = false;
+            graphics.PreferredBackBufferWidth = defaultWidth;
+            graphics.PreferredBackBufferHeight = defaultHeight;
+            graphics.ApplyChanges();
+            IsMouseVisible = true;
+            Window.AllowUserResizing = true;            
         }
         
         /// <summary>
@@ -58,11 +68,6 @@ namespace DemoGame
             spriteBatch = new SpriteBatch(GraphicsDevice);
             // TODO: use this.Content to load your game content here
             mosaic = new Mosaic(this, "tinytown.tmx");
-            canvas = new Canvas(this);
-            
-            Assembly asm = Assembly.GetEntryAssembly();
-            Stream imgStream = asm.GetManifestResourceStream("DemoGame.assets.towntiles.png");
-            testImg = Texture2D.FromFile(GraphicsDevice, imgStream);
         }
         
         /// <summary>
