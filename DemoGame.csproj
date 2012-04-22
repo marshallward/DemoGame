@@ -60,5 +60,12 @@
     <EmbeddedResource Include="assets\towntiles.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
+    <EmbeddedResource Include="assets\demo_map.tmx" />
+    <EmbeddedResource Include="assets\demo_tiles.png" />
+    <EmbeddedResource Include="assets\demo_tiles.tsx" />
+    <EmbeddedResource Include="assets\demo_tiles2.png" />
+    <EmbeddedResource Include="assets\demo_tiles2.tsx" />
+    <EmbeddedResource Include="assets\demo_tiles3.png" />
+    <EmbeddedResource Include="assets\demo_tiles3.tsx" />
   </ItemGroup>
 </Project>

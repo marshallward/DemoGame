@@ -9,11 +9,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
 
-using TiledSharp;
 using Tesserae;
-
-using System.IO;
-using System.Reflection;
 
 namespace DemoGame
 {
@@ -27,8 +23,8 @@ namespace DemoGame
         public Mosaic mosaic;
         
         // Better place to put this?
-        public int defaultWidth = 1280;
-        public int defaultHeight = 720;
+        public int defaultWidth = 240;
+        public int defaultHeight = 240;
         
         public DemoGame()
         {
@@ -67,7 +63,7 @@ namespace DemoGame
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
             // TODO: use this.Content to load your game content here
-            mosaic = new Mosaic(this, "tinytown.tmx");
+            mosaic = new Mosaic(this, "demo_map.tmx");
         }
         
         /// <summary>
