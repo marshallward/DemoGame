@@ -22,9 +22,12 @@ namespace DemoGame
         public SpriteBatch spriteBatch;
         public Mosaic mosaic;
         
+        // Temporary
+        public RenderTarget2D renderTarget;
+        
         // Better place to put this?
-        public int defaultWidth = 240;
-        public int defaultHeight = 240;
+        public int defaultWidth = 720;
+        public int defaultHeight = 720;
         
         public DemoGame()
         {
@@ -51,7 +54,10 @@ namespace DemoGame
             graphics.PreferredBackBufferHeight = defaultHeight;
             graphics.ApplyChanges();
             IsMouseVisible = true;
-            Window.AllowUserResizing = true;            
+            Window.AllowUserResizing = true;
+            
+            // Temporary
+            renderTarget = new RenderTarget2D(GraphicsDevice, defaultWidth, defaultHeight);
         }
         
         /// <summary>
@@ -96,15 +102,25 @@ namespace DemoGame
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Draw(GameTime gameTime)
         {
+            base.Draw(gameTime);
+            // TODO: Add your drawing code here
+            
+            var testTexture = mosaic.spriteSheet[mosaic.idSheet[1]];
+            
+            // Draw RenderTarget
+            GraphicsDevice.Clear(Color.CornflowerBlue);
+            GraphicsDevice.SetRenderTarget(renderTarget);
+            spriteBatch.Draw(testTexture, Vector2.Zero, Color.White);
+            GraphicsDevice.SetRenderTarget(null);
+            
+            // Draw on the back buffer
             GraphicsDevice.Clear(Color.CornflowerBlue);
             
-            // TODO: Add your drawing code here
             spriteBatch.Begin(SpriteSortMode.Immediate, BlendState.AlphaBlend,
                               SamplerState.PointClamp, null, null);
-            mosaic.Draw(spriteBatch);
+            //var rect = new Rectangle(0, 0, defaultWidth/2, defaultHeight/2);
+            //spriteBatch.Draw(mosaic.renderTarget, rect, Color.White);
             spriteBatch.End();
-            
-            base.Draw(gameTime);
         }
     }
 }
