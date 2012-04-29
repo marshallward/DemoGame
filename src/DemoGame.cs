@@ -22,9 +22,6 @@ namespace DemoGame
         public SpriteBatch spriteBatch;
         public Mosaic mosaic;
         
-        // Temporary
-        public RenderTarget2D renderTarget;
-        
         // Better place to put this?
         public int defaultWidth = 720;
         public int defaultHeight = 720;
@@ -55,9 +52,6 @@ namespace DemoGame
             graphics.ApplyChanges();
             IsMouseVisible = true;
             Window.AllowUserResizing = true;
-            
-            // Temporary
-            renderTarget = new RenderTarget2D(GraphicsDevice, defaultWidth, defaultHeight);
         }
         
         /// <summary>
@@ -104,22 +98,15 @@ namespace DemoGame
         {
             base.Draw(gameTime);
             // TODO: Add your drawing code here
-            
-            var testTexture = mosaic.spriteSheet[mosaic.idSheet[1]];
-            
-            // Draw RenderTarget
-            GraphicsDevice.Clear(Color.CornflowerBlue);
-            GraphicsDevice.SetRenderTarget(renderTarget);
-            spriteBatch.Draw(testTexture, Vector2.Zero, Color.White);
-            GraphicsDevice.SetRenderTarget(null);
+            mosaic.DrawCanvas(spriteBatch);
             
             // Draw on the back buffer
             GraphicsDevice.Clear(Color.CornflowerBlue);
             
             spriteBatch.Begin(SpriteSortMode.Immediate, BlendState.AlphaBlend,
                               SamplerState.PointClamp, null, null);
-            //var rect = new Rectangle(0, 0, defaultWidth/2, defaultHeight/2);
-            //spriteBatch.Draw(mosaic.renderTarget, rect, Color.White);
+            var rect = new Rectangle(0, 0, defaultWidth, defaultHeight);
+            spriteBatch.Draw(mosaic.renderTarget, rect, Color.White);
             spriteBatch.End();
         }
     }
