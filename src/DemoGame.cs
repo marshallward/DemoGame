@@ -30,8 +30,13 @@ namespace DemoGame
         {
             graphics = new GraphicsDeviceManager(this);
             
-            // I don't want to use this, delete it?
-            Content.RootDirectory = "assets";
+            // Default window resolution
+            graphics.IsFullScreen = false;
+            graphics.PreferredBackBufferWidth = defaultWidth;
+            graphics.PreferredBackBufferHeight = defaultHeight;
+            graphics.ApplyChanges();
+            IsMouseVisible = true;
+            Window.AllowUserResizing = true;
         }
         
         /// <summary>
@@ -44,14 +49,6 @@ namespace DemoGame
         {
             // TODO: Add your initialization logic here            
             base.Initialize();
-            
-            // Default window resolution
-            graphics.IsFullScreen = false;
-            graphics.PreferredBackBufferWidth = defaultWidth;
-            graphics.PreferredBackBufferHeight = defaultHeight;
-            graphics.ApplyChanges();
-            IsMouseVisible = true;
-            Window.AllowUserResizing = true;
         }
         
         /// <summary>
