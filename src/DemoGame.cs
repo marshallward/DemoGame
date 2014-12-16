@@ -60,7 +60,7 @@ namespace DemoGame
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
             // TODO: use this.Content to load your game content here
-            mosaic = new Mosaic(this, "demo_map.tmx");
+            mosaic = new Mosaic(this, "sewers.tmx");
         }
         
         /// <summary>

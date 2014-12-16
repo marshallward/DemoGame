@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
-    <ProductVersion>10.0.0</ProductVersion>
+    <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{871D1DEA-88F4-46C7-BD08-A4C40FAC8363}</ProjectGuid>
     <OutputType>Exe</OutputType>
@@ -37,35 +37,25 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System.Xml.Linq" />
-    <Reference Include="MonoGame.Framework.Linux">
-      <HintPath>..\MonoGame\MonoGame.Framework\bin\Release\MonoGame.Framework.Linux.dll</HintPath>
+    <Reference Include="MonoGame.Framework">
+      <HintPath>..\MonoGame\MonoGame.Framework\bin\Linux\Debug\MonoGame.Framework.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\TiledSharp\TiledSharp.csproj">
-      <Project>{E4130F8D-D301-4E0C-916D-489C4A23C9B1}</Project>
-      <Name>TiledSharp</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Tesserae\Tesserae.csproj">
       <Project>{30777E62-15EC-4362-ADBB-8A8DE93FF10D}</Project>
       <Name>Tesserae</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TiledSharp\TiledSharp\TiledSharp.csproj">
+      <Project>{E4130F8D-D301-4E0C-916D-489C4A23C9B1}</Project>
+      <Name>TiledSharp</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="assets\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="assets\tinytown.tmx" />
-    <EmbeddedResource Include="assets\towntiles.tsx" />
-    <EmbeddedResource Include="assets\towntiles.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="assets\demo_map.tmx" />
-    <EmbeddedResource Include="assets\demo_tiles.png" />
-    <EmbeddedResource Include="assets\demo_tiles.tsx" />
-    <EmbeddedResource Include="assets\demo_tiles2.png" />
-    <EmbeddedResource Include="assets\demo_tiles2.tsx" />
-    <EmbeddedResource Include="assets\demo_tiles3.png" />
-    <EmbeddedResource Include="assets\demo_tiles3.tsx" />
+    <EmbeddedResource Include="assets\sewers.tmx" />
+    <EmbeddedResource Include="assets\sewer_tileset.png" />
   </ItemGroup>
 </Project>
